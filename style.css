@@ -1,0 +1,362 @@
+body {
+    background-image: url('grass.jpg');
+    background-repeat: repeat;
+    background-size: auto;
+    background-position: 0 0;
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+    background-attachment: scroll;
+}
+
+/* Ensure html element also has the background for better compatibility */
+html {
+    background-image: url('grass.jpg');
+    background-repeat: repeat;
+    background-size: auto;
+    background-position: 0 0;
+    min-height: 100vh;
+    background-attachment: scroll;
+}
+
+
+
+h1 {
+    color: white;
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 10px 0;
+}
+
+.button-group {
+    border: 4px double #ffffff;
+    border-radius: 15px;
+    padding: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Position flower images at the top of the page */
+img[can-move] {
+    position: absolute;
+    top: 120px; /* Position below the header */
+    z-index: 100;
+    /* Random positioning near center - will be overridden by JavaScript */
+    left: 50%;
+    transform: translateX(-50%);
+    /* Ensure dragging works properly */
+    cursor: grab;
+    user-select: none;
+}
+
+/* When dragging, change cursor */
+img[can-move]:active {
+    cursor: grabbing;
+}
+
+/* Remove specific positioning for individual flowers since we want random placement */
+/* The JavaScript will handle the random positioning */
+
+.garden {
+    display: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+/* Modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 30px;
+    border: 1px solid #888;
+    width: 600px;
+    max-height: 80vh;
+    overflow-y: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.close {
+    color: black;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+}
+
+/* Modal content styling */
+.modal-content h2 {
+    color: #2c5530;
+    margin-bottom: 25px;
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+.modal-content h3 {
+    color: #4a7c59;
+    margin-top: 25px;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+    border-bottom: 2px solid #e8f5e8;
+    padding-bottom: 8px;
+}
+
+.modal-content h4 {
+    color: #5a8a6a;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.modal-content p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.modal-content ul {
+    margin-bottom: 15px;
+    padding-left: 20px;
+}
+
+.modal-content li {
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+
+.modal-section {
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.modal-section:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+/* Loading state styling */
+.loading {
+    text-align: center;
+    color: #666;
+    font-style: italic;
+    padding: 20px;
+}
+
+/* Make shovel clickable */
+#shovel {
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+#shovel:hover {
+    transform: scale(1.1);
+}
+
+/* Action button container and glow styling */
+.action-button-container {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.action-button-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 192, 203, 0.3) 0%, rgba(255, 182, 193, 0.2) 30%, rgba(255, 20, 147, 0.1) 60%, transparent 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.action-button-container:hover .action-button-glow {
+    opacity: 1;
+}
+
+.action-button-container:hover {
+    transform: scale(1.02);
+}
+
+/* Action button styling */
+.action-button {
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 10px;
+    position: relative;
+    z-index: 1;
+    /* Remove border-radius to prevent circular cropping */
+}
+
+/* Position action button group in top right corner */
+.action-button-group {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1001;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 15px;
+}
+
+/* Mobile Responsive Styles */
+@media screen and (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    
+    h1 {
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+        padding: 0 10px;
+    }
+    
+    header {
+        padding: 5px 0;
+    }
+    
+    .button-group {
+        flex-direction: column;
+        gap: 10px;
+        padding: 15px;
+        border-width: 2px;
+        border-radius: 10px;
+        max-width: 90%;
+    }
+    
+    .button-group button {
+        font-size: 0.9rem;
+        padding: 8px 12px;
+        white-space: nowrap;
+    }
+    
+    .action-button-group {
+        top: 10px;
+        right: 10px;
+        padding: 10px;
+        gap: 3px;
+    }
+    
+    .action-button-container {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .action-button-glow {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .action-button {
+        width: 60px;
+        height: 60px;
+        padding: 5px;
+    }
+    
+    /* Adjust modal for mobile */
+    .modal-content {
+        width: 90%;
+        height: auto;
+        max-height: 80vh;
+        margin: 20px auto;
+        padding: 20px;
+    }
+    
+    .modal-content h2 {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
+    
+    .modal-content h3 {
+        font-size: 1.2rem;
+        margin-top: 20px;
+    }
+    
+    .modal-content h4 {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    h1 {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+    }
+    
+    .button-group {
+        padding: 10px;
+        gap: 8px;
+    }
+    
+    .button-group button {
+        font-size: 0.8rem;
+        padding: 6px 10px;
+    }
+    
+    .action-button-container {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .action-button-glow {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .action-button {
+        width: 50px;
+        height: 50px;
+    }
+    
+    /* Adjust flower positioning for mobile */
+    img[can-move] {
+        top: 100px;
+    }
+}
+
