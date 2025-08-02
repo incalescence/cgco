@@ -104,7 +104,6 @@ button {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    border-radius: 10px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
@@ -192,6 +191,24 @@ button {
     transform: scale(1.1);
 }
 
+/* Flag counter styling */
+.flag-counter-container {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #e8f5e8;
+}
+
+.flag-counter-container a {
+    text-decoration: none;
+}
+
+.flag-counter-container img {
+    border: none;
+    max-width: 100%;
+    height: auto;
+}
+
 /* Action button container and glow styling */
 .action-button-container {
     position: relative;
@@ -250,17 +267,17 @@ button {
     body {
         padding: 10px;
     }
-    
+
     h1 {
         font-size: 1.8rem;
         margin-bottom: 20px;
         padding: 0 10px;
     }
-    
+
     header {
         padding: 5px 0;
     }
-    
+
     .button-group {
         flex-direction: column;
         gap: 10px;
@@ -269,36 +286,36 @@ button {
         border-radius: 10px;
         max-width: 90%;
     }
-    
+
     .button-group button {
         font-size: 0.9rem;
         padding: 8px 12px;
         white-space: nowrap;
     }
-    
+
     .action-button-group {
         top: 10px;
         right: 10px;
         padding: 10px;
         gap: 3px;
     }
-    
+
     .action-button-container {
         width: 60px;
         height: 60px;
     }
-    
+
     .action-button-glow {
         width: 80px;
         height: 80px;
     }
-    
+
     .action-button {
         width: 60px;
         height: 60px;
         padding: 5px;
     }
-    
+
     /* Adjust modal for mobile */
     .modal-content {
         width: 90%;
@@ -307,17 +324,17 @@ button {
         margin: 20px auto;
         padding: 20px;
     }
-    
+
     .modal-content h2 {
         font-size: 1.5rem;
         margin-bottom: 20px;
     }
-    
+
     .modal-content h3 {
         font-size: 1.2rem;
         margin-top: 20px;
     }
-    
+
     .modal-content h4 {
         font-size: 1rem;
     }
@@ -328,35 +345,33 @@ button {
         font-size: 1.5rem;
         margin-bottom: 15px;
     }
-    
+
     .button-group {
         padding: 10px;
         gap: 8px;
     }
-    
+
     .button-group button {
         font-size: 0.8rem;
         padding: 6px 10px;
     }
-    
+
     .action-button-container {
         width: 50px;
         height: 50px;
     }
-    
+
     .action-button-glow {
         width: 70px;
         height: 70px;
     }
-    
+
     .action-button {
         width: 50px;
         height: 50px;
     }
-    
-    /* Adjust flower positioning for mobile */
+
     img[can-move] {
         top: 100px;
     }
 }
-

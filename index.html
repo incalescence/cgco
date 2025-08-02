@@ -1,424 +1,807 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HTML Community Garden</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⛲</text></svg>">
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>HTML Community Garden</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⛲</text></svg>">
+
 </head>
+
 <body>
-     <header>
-        <H1>Community Garden for the Chronically Online</H1>
-        <div class="button-group">
-     <button
-   can-duplicate="daisy"
-   > 🌼 Plant Daisy
-   </button>
-        <button
-    can-duplicate="rose"
-    > 🌹 Plant Rose
-    </button>
-    <button
-    can-duplicate="tulip"
-    > 🌷 Plant Tulip
-    </button>
-    <button
-    can-duplicate="shrub"
-    > 🌳 Plant Shrub
-    </button>
-    <button
-    can-duplicate="jasmine"
-    > 🌺 Plant Jasmine
-    </button>
-   </div>
 
-   <div class="action-button-group">
-   <div class="action-button-container">
-     <div class="action-button-glow"></div>
-     <img
-     src="shovel.png"
-     can-spin
-     id="shovel"
-     class="action-button"
-     alt="shovel"
-     width="100"
-     height="100"
-     />
-   </div>
+<header>
 
-   <div class="action-button-container">
-     <div class="action-button-glow"></div>
-     <img
-     src="dianacam-removebg-preview.png"
-     can-spin
-     id="diana-cam"
-     class="action-button"
-     alt="diana-cam"
-     width="100"
-     height="100"
-     title="Take Screenshot"
-     />
-   </div>
-   
+<H1>Community Garden for the Chronically Online</H1>
 
-  </div>
-     </header>
+<div class="button-group">
 
-     <!-- Modal -->
-     <div id="shovelModal" class="modal">
-       <div class="modal-content">
-         <span class="close">&times;</span>
-         <div id="modalContent">
-           <h2>Loading...</h2>
-         </div>
-       </div>
-     </div>
+<button
 
-    <img
-      src='daisyyellow.webp'
-      can-move
-      id="daisy"
-      alt="daisy"
-      width="200"
-      height="200"
-    />
+can-duplicate="daisy"
 
-    <img
-    src="tulip-removebg-preview.png"
-    can-move
-    id="tulip"
-    alt="tulip"
-    width="100"
-    height="200"
-  />
+> 🌼 Plant Daisy
 
-  <img
-  src="rose-removebg-preview.png"
-  can-move
-  id="rose"
-  alt="rose"
-  width="400"
-  height="300"
+</button>
+
+<button
+
+can-duplicate="rose"
+
+> 🌹 Plant Rose
+
+</button>
+
+<button
+
+can-duplicate="tulip"
+
+> 🌷 Plant Tulip
+
+</button>
+
+<button
+
+can-duplicate="shrub"
+
+> 🌳 Plant Shrub
+
+</button>
+
+<button
+
+can-duplicate="jasmine"
+
+> 🌺 Plant Jasmine
+
+</button>
+
+</div>
+
+<div class="action-button-group">
+
+<div class="action-button-container">
+
+<div class="action-button-glow"></div>
+
+<img
+
+src="shovel.png"
+
+can-spin
+
+id="shovel"
+
+class="action-button"
+
+alt="shovel"
+
+width="100"
+
+height="100"
+
+/>
+
+</div>
+
+<div class="action-button-container">
+
+<div class="action-button-glow"></div>
+
+<img
+
+src="dianacam-removebg-preview.png"
+
+can-spin
+
+id="diana-cam"
+
+class="action-button"
+
+alt="diana-cam"
+
+width="100"
+
+height="100"
+
+title="Take Screenshot"
+
+/>
+
+</div>
+
+</div>
+
+</header>
+
+<!-- Modal -->
+
+<div id="shovelModal" class="modal">
+
+<div class="modal-content">
+
+<span class="close">&times;</span>
+
+<div id="modalContent">
+
+<h2>Loading...</h2>
+
+</div>
+
+<div class="flag-counter-container">
+
+<a href="https://www.flagcounter.me/details/f6e"><img src="https://www.flagcounter.me/f6e/" alt="Flag Counter"></a>
+
+</div>
+
+</div>
+
+</div>
+
+<img
+
+src='daisyyellow.webp'
+
+can-move
+
+id="daisy"
+
+alt="daisy"
+
+width="150"
+
+height="150"
+
 />
 
 <img
-src="topiary-hedge-square-shape-png-image_13893568-removebg-preview.png"
+
+src="tulip-removebg-preview.png"
+
 can-move
-id="shrub"
-alt="shrub"
-width="240"
-height="240"
+
+id="tulip"
+
+alt="tulip"
+
+width="80"
+
+height="150"
+
 />
 
 <img
-src="jasmine.png"
-can-move
-id="jasmine"
-alt="jasmine"
-width="120"
-height="120"
-/>
 
-<img
-src="fountain.webp"
-can-move
-alt="fountain"
-width="400"
-height="400"
-/>
+src="rose-removebg-preview.png"
 
-<img
-src="water_fountain__png_overlay__by_lewis4721_dej5cpb-fullview.png"
 can-move
-alt="waterfountain"
-width="400"
-height="400"
-/>
 
-<img
-src="angel.png"
-can-move
-alt="angel"
-width="200"
-height="300"
-/>
+id="rose"
 
-<img
-src="angel3-removebg-preview.png"
-can-move
-alt="angel3"
-width="250"
-height="300"
-/>
+alt="rose"
 
-<img
-src='1-Large-Devi-Tara-Statue-Garden-Stone-removebg-preview.png'
-can-move
-alt="tara"
-width="200"
-height="300"
-/>
-
-<img
-src='The_resting_place_of_Bahiyyih_Khanum-removebg-preview.png'
-can-move
-alt="monument"
 width="300"
-height="500"
+
+height="200"
+
 />
 
- <!-- Custom script for random flower positioning -->
- <script>
-  // Function to get random position near center
-  function getRandomCenterPosition() {
-    const windowWidth = window.innerWidth;
-    const windowHeight = window.innerHeight;
-    
-    // Center area (60% of window width, 40% of window height)
-    const centerAreaWidth = windowWidth * 0.6;
-    const centerAreaHeight = windowHeight * 0.4;
-    
-    // Calculate center area boundaries
-    const centerX = windowWidth / 2;
-    const centerY = windowHeight / 2;
-    const startX = centerX - centerAreaWidth / 2;
-    const startY = centerY - centerAreaHeight / 2;
-    
-    // Random position within center area
-    const randomX = startX + Math.random() * centerAreaWidth;
-    const randomY = startY + Math.random() * centerAreaHeight;
-    
-    return { x: randomX, y: randomY };
-  }
-  
-  // Function to position a flower randomly
-  function positionFlowerRandomly(flowerElement) {
-    const position = getRandomCenterPosition();
-    flowerElement.style.left = position.x + 'px';
-    flowerElement.style.top = position.y + 'px';
-    flowerElement.style.transform = 'none'; // Remove the center transform
-  }
-  
-  // Function to scroll to focus on a newly duplicated element
-  function scrollToElement(element) {
-    // Get the element's position relative to the viewport
-    const rect = element.getBoundingClientRect();
-    const elementCenterX = rect.left + rect.width / 2;
-    const elementCenterY = rect.top + rect.height / 2;
-    
-    // Calculate the scroll position to center the element
-    const scrollX = window.scrollX + elementCenterX - window.innerWidth / 2;
-    const scrollY = window.scrollY + elementCenterY - window.innerHeight / 2;
-    
-    // Smooth scroll to the element
-    window.scrollTo({
-      left: scrollX,
-      top: scrollY,
-      behavior: 'smooth'
-    });
-  }
-  
-  // Wait for playhtml to initialize before setting up our observer
-  function initializeRandomPositioning() {
-    // Watch for new flower elements and position them randomly
-    const observer = new MutationObserver((mutations) => {
-      mutations.forEach((mutation) => {
-        mutation.addedNodes.forEach((node) => {
-          if (node.nodeType === Node.ELEMENT_NODE && node.hasAttribute('can-move')) {
-            // Wait a bit longer to ensure playhtml has initialized the drag functionality
-            setTimeout(() => {
-              positionFlowerRandomly(node);
-              // Scroll to focus on the newly duplicated element
-              scrollToElement(node);
-            }, 100);
-          }
-        });
-      });
-    });
-    
-    // Start observing
-    observer.observe(document.body, {
-      childList: true,
-      subtree: true
-    });
-  }
-  
-  // Screenshot functionality
-  function initializeScreenshot() {
-    const dianaCam = document.getElementById('diana-cam');
-    
-    dianaCam.addEventListener('click', function() {
-      // Show loading state
-      dianaCam.style.opacity = '0.7';
-      dianaCam.style.transform = 'scale(0.95)';
-      
-      // Take screenshot of current viewport with proper background
-      html2canvas(document.body, {
-        allowTaint: true,
-        useCORS: true,
-        backgroundColor: '#228B22', // Fallback green background
-        backgroundImage: 'url("grass.jpg")',
-        backgroundRepeat: 'repeat',
-        backgroundSize: 'auto',
-        backgroundPosition: '0 0',
-        minHeight: '100vh',
-        backgroundAttachment: 'scroll',
-        scale: 2, // Higher quality
-        logging: false,
-        width: window.innerWidth,
-        height: window.innerHeight,
-        x: window.scrollX,
-        y: window.scrollY,
-        scrollX: 0,
-        scrollY: 0,
-        ignoreElements: function(element) {
-          // Hide header from screenshot
-          if (element.tagName === 'HEADER') {
-            return true;
-          }
-          return false;
-        },
-        onclone: function(clonedDoc) {
-          // Ensure proper background in cloned document for viewport capture
-          const clonedBody = clonedDoc.body;
-          const clonedHtml = clonedDoc.documentElement;
-          
-          // Apply grass background to both html and body elements
-          clonedHtml.style.backgroundImage = 'url("grass.jpg")';
-          clonedHtml.style.backgroundRepeat = 'repeat';
-          clonedHtml.style.backgroundSize = 'auto';
-          clonedHtml.style.backgroundPosition = '0 0';
-          clonedHtml.style.minHeight = '100vh';
-          
-          clonedBody.style.backgroundImage = 'url("grass.jpg")';
-          clonedBody.style.backgroundRepeat = 'repeat';
-          clonedBody.style.backgroundSize = 'auto';
-          clonedBody.style.backgroundPosition = '0 0';
-          clonedBody.style.minHeight = '100vh';
-          
-          // Ensure the background covers the viewport area properly
-          clonedHtml.style.backgroundAttachment = 'scroll';
-          clonedBody.style.backgroundAttachment = 'scroll';
-        }
-      }).then(function(canvas) {
-        // Create download link
-        const link = document.createElement('a');
-        link.download = 'community-garden-snapshot-' + new Date().toISOString().slice(0, 19).replace(/:/g, '-') + '.png';
-        link.href = canvas.toDataURL('image/png');
-        
-        // Trigger download
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-        
-        // Reset button state
-        dianaCam.style.opacity = '1';
-        dianaCam.style.transform = 'scale(1)';
-      }).catch(function(error) {
-        console.error('Screenshot failed:', error);
-        alert('Failed to take screenshot. Please try again.');
-        
-        // Reset button state
-        dianaCam.style.opacity = '1';
-        dianaCam.style.transform = 'scale(1)';
-      });
-    });
-  }
+<img
 
-  // Function to fetch and parse README.md
-  async function fetchReadmeContent() {
-    try {
-      const response = await fetch('README.md');
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-      const text = await response.text();
-      return parseMarkdown(text);
-    } catch (error) {
-      console.error('Failed to fetch README.md:', error);
-      return '<p>Failed to load README content.</p>';
-    }
-  }
+src="topiary-hedge-square-shape-png-image_13893568-removebg-preview.png"
 
-  // Simple markdown parser for basic formatting
-  function parseMarkdown(markdown) {
-    let html = markdown
-      // Convert headers
-      .replace(/^### (.*$)/gim, '<h3>$1</h3>')
-      .replace(/^## (.*$)/gim, '<h2>$1</h2>')
-      .replace(/^# (.*$)/gim, '<h1>$1</h1>')
-      // Convert bold text
-      .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-      // Convert italic text
-      .replace(/\*(.*?)\*/g, '<em>$1</em>')
-      // Convert line breaks to paragraphs
-      .split('\n\n')
-      .map(paragraph => {
-        if (paragraph.trim() === '') return '';
-        if (paragraph.startsWith('<h')) return paragraph;
-        return `<p>${paragraph}</p>`;
-      })
-      .join('');
-    
-    return html;
-  }
+can-move
 
-  // Function to update modal content
-  async function updateModalContent() {
-    const modalContentDiv = document.getElementById('modalContent');
-    modalContentDiv.innerHTML = '<h2>Loading...</h2>';
-    const content = await fetchReadmeContent();
-    modalContentDiv.innerHTML = content;
-  }
+id="shrub"
 
-  // Modal functionality
-  function initializeModal() {
-    const modal = document.getElementById('shovelModal');
-    const shovel = document.getElementById('shovel');
-    const closeBtn = document.querySelector('.close');
-    
-    // Open modal when shovel is clicked
-    shovel.addEventListener('click', function() {
-      modal.style.display = 'block';
-      // Update content when modal is opened
-      updateModalContent();
-    });
-    
-    // Close modal when X is clicked
-    closeBtn.addEventListener('click', function() {
-      modal.style.display = 'none';
-    });
-    
-    // Close modal when clicking outside of it
-    window.addEventListener('click', function(event) {
-      if (event.target === modal) {
-        modal.style.display = 'none';
-      }
-    });
-  }
+alt="shrub"
 
-  // Wait for both DOM content and playhtml to be ready
-  document.addEventListener('DOMContentLoaded', () => {
-    // Give playhtml time to initialize
-    setTimeout(initializeRandomPositioning, 500);
-    // Initialize modal functionality
-    initializeModal();
-    // Initialize screenshot functionality
-    initializeScreenshot();
-    // Update modal content after DOM is ready
-    updateModalContent();
-  });
+width="200"
+
+height="200"
+
+/>
+
+<img
+
+src="jasmine.png"
+
+can-move
+
+id="jasmine"
+
+alt="jasmine"
+
+width="100"
+
+height="100"
+
+/>
+
+<img
+
+src="fountain.webp"
+
+can-move
+
+alt="fountain"
+
+width="400"
+
+height="400"
+
+/>
+
+<img
+
+src="water_fountain__png_overlay__by_lewis4721_dej5cpb-fullview.png"
+
+can-move
+
+alt="waterfountain"
+
+width="400"
+
+height="400"
+
+/>
+
+<img
+
+src="angel.png"
+
+can-move
+
+alt="angel"
+
+width="140"
+
+height="200"
+
+/>
+
+<img
+
+src="angel3-removebg-preview.png"
+
+can-move
+
+alt="angel3"
+
+width="250"
+
+height="300"
+
+/>
+
+<img
+
+src='1-Large-Devi-Tara-Statue-Garden-Stone-removebg-preview.png'
+
+can-move
+
+alt="tara"
+
+width="200"
+
+height="300"
+
+/>
+
+<img
+
+src='The_resting_place_of_Bahiyyih_Khanum-removebg-preview.png'
+
+can-move
+
+alt="monument"
+
+width="300"
+
+height="500"
+
+/>
+
+<!-- Custom script for random flower positioning -->
+
+<script>
+
+// Function to get random position near center
+
+function getRandomCenterPosition() {
+
+const windowWidth = window.innerWidth;
+
+const windowHeight = window.innerHeight;
+
+// Center area (60% of window width, 40% of window height)
+
+const centerAreaWidth = windowWidth * 0.6;
+
+const centerAreaHeight = windowHeight * 0.4;
+
+// Calculate center area boundaries
+
+const centerX = windowWidth / 2;
+
+const centerY = windowHeight / 2;
+
+const startX = centerX - centerAreaWidth / 2;
+
+const startY = centerY - centerAreaHeight / 2;
+
+// Random position within center area
+
+const randomX = startX + Math.random() * centerAreaWidth;
+
+const randomY = startY + Math.random() * centerAreaHeight;
+
+return { x: randomX, y: randomY };
+
+}
+
+// Function to position a flower randomly
+
+function positionFlowerRandomly(flowerElement) {
+
+const position = getRandomCenterPosition();
+
+flowerElement.style.left = position.x + 'px';
+
+flowerElement.style.top = position.y + 'px';
+
+flowerElement.style.transform = 'none'; // Remove the center transform
+
+}
+
+// Function to scroll to focus on a newly duplicated element
+
+function scrollToElement(element) {
+
+// Get the element's position relative to the viewport
+
+const rect = element.getBoundingClientRect();
+
+const elementCenterX = rect.left + rect.width / 2;
+
+const elementCenterY = rect.top + rect.height / 2;
+
+// Calculate the scroll position to center the element
+
+const scrollX = window.scrollX + elementCenterX - window.innerWidth / 2;
+
+const scrollY = window.scrollY + elementCenterY - window.innerHeight / 2;
+
+// Smooth scroll to the element
+
+window.scrollTo({
+
+left: scrollX,
+
+top: scrollY,
+
+behavior: 'smooth'
+
+});
+
+}
+
+// Wait for playhtml to initialize before setting up our observer
+
+function initializeRandomPositioning() {
+
+// Watch for new flower elements and position them randomly
+
+const observer = new MutationObserver((mutations) => {
+
+mutations.forEach((mutation) => {
+
+mutation.addedNodes.forEach((node) => {
+
+if (node.nodeType === Node.ELEMENT_NODE && node.hasAttribute('can-move')) {
+
+// Wait a bit longer to ensure playhtml has initialized the drag functionality
+
+setTimeout(() => {
+
+positionFlowerRandomly(node);
+
+// Scroll to focus on the newly duplicated element
+
+scrollToElement(node);
+
+}, 100);
+
+}
+
+});
+
+});
+
+});
+
+// Start observing
+
+observer.observe(document.body, {
+
+childList: true,
+
+subtree: true
+
+});
+
+}
+
+// Screenshot functionality
+
+function initializeScreenshot() {
+
+const dianaCam = document.getElementById('diana-cam');
+
+dianaCam.addEventListener('click', function() {
+
+// Show loading state
+
+dianaCam.style.opacity = '0.7';
+
+dianaCam.style.transform = 'scale(0.95)';
+
+// Take screenshot of current viewport with proper background
+
+html2canvas(document.body, {
+
+allowTaint: true,
+
+useCORS: true,
+
+backgroundColor: '#228B22', // Fallback green background
+
+backgroundImage: 'url("grass.jpg")',
+
+backgroundRepeat: 'repeat',
+
+backgroundSize: 'auto',
+
+backgroundPosition: '0 0',
+
+minHeight: '100vh',
+
+backgroundAttachment: 'scroll',
+
+scale: 2, // Higher quality
+
+logging: false,
+
+width: window.innerWidth,
+
+height: window.innerHeight,
+
+x: window.scrollX,
+
+y: window.scrollY,
+
+scrollX: 0,
+
+scrollY: 0,
+
+ignoreElements: function(element) {
+
+// Hide header from screenshot
+
+if (element.tagName === 'HEADER') {
+
+return true;
+
+}
+
+return false;
+
+},
+
+onclone: function(clonedDoc) {
+
+// Ensure proper background in cloned document for viewport capture
+
+const clonedBody = clonedDoc.body;
+
+const clonedHtml = clonedDoc.documentElement;
+
+// Apply grass background to both html and body elements
+
+clonedHtml.style.backgroundImage = 'url("grass.jpg")';
+
+clonedHtml.style.backgroundRepeat = 'repeat';
+
+clonedHtml.style.backgroundSize = 'auto';
+
+clonedHtml.style.backgroundPosition = '0 0';
+
+clonedHtml.style.minHeight = '100vh';
+
+clonedBody.style.backgroundImage = 'url("grass.jpg")';
+
+clonedBody.style.backgroundRepeat = 'repeat';
+
+clonedBody.style.backgroundSize = 'auto';
+
+clonedBody.style.backgroundPosition = '0 0';
+
+clonedBody.style.minHeight = '100vh';
+
+// Ensure the background covers the viewport area properly
+
+clonedHtml.style.backgroundAttachment = 'scroll';
+
+clonedBody.style.backgroundAttachment = 'scroll';
+
+}
+
+}).then(function(canvas) {
+
+// Create download link
+
+const link = document.createElement('a');
+
+link.download = 'community-garden-snapshot-' + new Date().toISOString().slice(0, 19).replace(/:/g, '-') + '.png';
+
+link.href = canvas.toDataURL('image/png');
+
+// Trigger download
+
+document.body.appendChild(link);
+
+link.click();
+
+document.body.removeChild(link);
+
+// Reset button state
+
+dianaCam.style.opacity = '1';
+
+dianaCam.style.transform = 'scale(1)';
+
+}).catch(function(error) {
+
+console.error('Screenshot failed:', error);
+
+alert('Failed to take screenshot. Please try again.');
+
+// Reset button state
+
+dianaCam.style.opacity = '1';
+
+dianaCam.style.transform = 'scale(1)';
+
+});
+
+});
+
+}
+
+// Function to fetch and parse README.md
+
+async function fetchReadmeContent() {
+
+try {
+
+const response = await fetch('README.md');
+
+if (!response.ok) {
+
+throw new Error(`HTTP error! status: ${response.status}`);
+
+}
+
+const text = await response.text();
+
+return parseMarkdown(text);
+
+} catch (error) {
+
+console.error('Failed to fetch README.md:', error);
+
+return '<p>Failed to load README content.</p>';
+
+}
+
+}
+
+// Enhanced markdown parser with list support
+
+function parseMarkdown(markdown) {
+
+// First, let's handle lists before other formatting
+
+let html = markdown;
+
+// Remove the h1 and cover image from the beginning
+
+html = html.replace(/^# Community Garden for the Chronically Online\n!\[cover pic\]\(coverpic\.png "cover"\)\n\n/, '');
+
+// Process unordered lists (lines starting with -, *, or +)
+
+html = html.replace(/^([\s]*)[-*+]\s+(.+)$/gm, function(match, indent, content) {
+
+const indentLevel = indent.length;
+
+const indentClass = indentLevel > 0 ? ` style="margin-left: ${indentLevel * 20}px;"` : '';
+
+return `<li${indentClass}>${content}</li>`;
+
+});
+
+html = html.replace(/^([\s]*)(\d+)\.\s+(.+)$/gm, function(match, indent, number, content) {
+
+const indentLevel = indent.length;
+
+const indentClass = indentLevel > 0 ? ` style="margin-left: ${indentLevel * 20}px;"` : '';
+
+return `<li${indentClass} value="${number}">${content}</li>`;
+
+});
+
+// Wrap consecutive list items in <ul> or <ol> tags
+
+html = html.replace(/(<li[^>]*>.*?<\/li>)(\s*<li[^>]*>.*?<\/li>)*/gs, function(match) {
+
+// Check if it's an ordered list (has value attribute)
+
+const isOrdered = /value="\d+"/.test(match);
+
+const listType = isOrdered ? 'ol' : 'ul';
+
+return `<${listType}>${match}</${listType}>`;
+
+});
+
+// Now handle other markdown formatting
+
+html = html
+
+// Convert headers
+
+.replace(/^### (.*$)/gim, '<h3>$1</h3>')
+
+.replace(/^## (.*$)/gim, '<h2>$1</h2>')
+
+.replace(/^# (.*$)/gim, '<h1>$1</h1>')
+
+// Convert bold text
+
+.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+
+// Convert italic text
+
+.replace(/\*(.*?)\*/g, '<em>$1</em>')
+
+// Convert markdown links [text](url) to HTML links
+
+.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>')
+
+// Convert line breaks to paragraphs (but skip if it's already a list)
+
+.split('\n\n')
+
+.map(paragraph => {
+
+if (paragraph.trim() === '') return '';
+
+if (paragraph.startsWith('<h') || paragraph.startsWith('<ul') || paragraph.startsWith('<ol')) return paragraph;
+
+return `<p>${paragraph}</p>`;
+
+})
+
+.join('');
+
+return html;
+
+}
+
+// Function to update modal content
+
+async function updateModalContent() {
+
+const modalContentDiv = document.getElementById('modalContent');
+
+modalContentDiv.innerHTML = '<h2>Loading...</h2>';
+
+const content = await fetchReadmeContent();
+
+modalContentDiv.innerHTML = content;
+
+}
+
+// Modal functionality
+
+function initializeModal() {
+
+const modal = document.getElementById('shovelModal');
+
+const shovel = document.getElementById('shovel');
+
+const closeBtn = document.querySelector('.close');
+
+// Open modal when shovel is clicked
+
+shovel.addEventListener('click', function() {
+
+modal.style.display = 'block';
+
+// Update content when modal is opened
+
+updateModalContent();
+
+});
+
+// Close modal when X is clicked
+
+closeBtn.addEventListener('click', function() {
+
+modal.style.display = 'none';
+
+});
+
+// Close modal when clicking outside of it
+
+window.addEventListener('click', function(event) {
+
+if (event.target === modal) {
+
+modal.style.display = 'none';
+
+}
+
+});
+
+}
+
+// Wait for both DOM content and playhtml to be ready
+
+document.addEventListener('DOMContentLoaded', () => {
+
+// Give playhtml time to initialize
+
+setTimeout(initializeRandomPositioning, 500);
+
+// Initialize modal functionality
+
+initializeModal();
+
+// Initialize screenshot functionality
+
+initializeScreenshot();
+
+// Update modal content after DOM is ready
+
+updateModalContent();
+
+});
+
 </script>
 
-    <!-- Option 1 (simplest, no customization) -->
-    <script
-      type="module"
-      src="https://unpkg.com/playhtml@latest/dist/init.es.js"
-    ></script>
+<!-- Option 1 (simplest, no customization) -->
 
-    <!-- html2canvas for screenshot functionality -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script
 
-  </body>
+type="module"
+
+src="https://unpkg.com/playhtml@latest/dist/init.es.js"
+
+></script>
+
+<!-- html2canvas for screenshot functionality -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+</body>
+
 </html>
